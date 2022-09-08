@@ -1,9 +1,12 @@
-#include <studio.h>
+#include <stdio.h>
 
-//function main initalizes  program execution
+/**
+ * main - function main initalizes program execution
+ *
+ * Return: returning 0 means success
+ */
 int main(void)
 {
-	printf( "\"Programming is like building a multilingual puzzle\n");
-	return 0;
+	printf("\"Programming is like building a multilingual puzzle\n");
+	return (0);
 }
-//returning 0 means success
