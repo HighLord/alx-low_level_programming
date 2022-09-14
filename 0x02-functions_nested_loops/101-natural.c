@@ -15,7 +15,9 @@ int main(void)
 		n = i % 3;
 		m = i % 5;
 		if (n == 0 || m == 0)
+		{
 			sum = sum + i;
+		}
 	}
 	printf("%d\n", sum);
 	return (0);
