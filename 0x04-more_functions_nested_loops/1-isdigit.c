@@ -1,19 +1,18 @@
-#include "main.h"
+#include <stdio.h>
 
 /**
- * _isdigit - Entry point
- *
- * @c: c is a variable name
- *
- * Return: Always 0 (Success)
+ * _isdigit -  a function that checks for a digit 0-9
+ * 
+ * Return: 1 if c is a digit, 0 otherwise
  */
 
-int _isdigit(int c)
+int main(void)
 {
-if (c >= 48 && c <= 57)
-return (1);
-else
-return (0);
-
-return (0);
+     int _isdigit(int c)
+     {
+      if ((c >= 48) && (c <= 57))
+       return (1);
+      else
+       return (0);
+     }
 }
