@@ -1,46 +1,53 @@
 #include "main.h"
+void print_negative(int n);
+void print_positive(int n);
+void print_zero(int n);
+
 /**
- * print_number - print an int numbers.
- * @n: number tested
- * Return: Always 0.
+ * print_number - prints an integer
+ * @n: integer to print
  */
 void print_number(int n)
 {
-	int i, j, digit, digits, power;
-	unsigned int temp, numchar, number;
-
-	digit = 0;
+	print_zero(n);
 	if (n < 0)
-	{
-		_putchar('-');
-		temp = -n;
-	}
-	else
-	{
-		temp = n;
-	}
+		print_negative(n);
+	else if (n > 0)
+		print_positive(n);
+}
 
-	number = temp;
+/**
+ * print_negative - transform negative to positive, then calls print_positive
+ * @n: integer to transform
+ */
+void print_negative(int n)
+{
+	_putchar(45);
+	n *= -1;
+	print_positive(n);
+}
 
-	while (number >= 10)
+/**
+ * print_positive - prints positive integer
+ * @n: integer to print
+ */
+void print_positive(int n)
+{
+	if (n != 0)
 	{
-		number = number / 10;
-		digit++;
+		print_positive(n / 10);
+		_putchar((n % 10) + '0');
 	}
-	digits = digit + 1;
-	power = 1;
-	i = 1;
+}
 
-	while (i < digits)
+/**
+ * print_zero - if the integer is equal to 0 prints 0
+ * @n: integer to print
+ */
+void print_zero(int n)
+{
+	if (n == 0)
 	{
-		power = power * 10;
-		i++;
-	}
-	j = power;
-	while (j >= 1)
-	{
-		numchar = (temp / j) % 10;
-		_putchar(numchar + '0');
-		j = j / 10;
+		_putchar('0');
 	}
 }
